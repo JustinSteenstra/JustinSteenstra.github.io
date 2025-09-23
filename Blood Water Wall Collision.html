@@ -109,7 +109,8 @@
         <section id="research-experience" class="grey-section">
             <div class="row research-experience-header">
                 <div class="col-twelve">
-                    <h1>Projects</h1>
+                    <h1>Blood/Water collision with Wall</h1>
+                    <h2>(Computational Fluid Dynamics class Final)</h2>
                 </div>
             </div>
 
@@ -121,59 +122,109 @@
                                 <i class="fa fa-university"></i>
                             </div>
                             <div class="timeline-header">
-                                <h3>Ansys fluent Blood wall collsion</h3>
-                                <p>November 2024-December 2024</p>
+                                <h3>Skills</h3>
                             </div>
                             <div class="timeline-content">
+                                   <p>CFD Fluent</p>
+                            </div>
+                        <div class="timeline-block">
+                            <div class="timeline-ico">
+                                <i class="fa fa-university"></i>
+                            </div>
+                            <div class="timeline-header">
+                                <h3>Objective</h3>
+                            </div>
+                            <div class="timeline-content">
+                                   <p>Our objective was to perform a CFD Fluent analysis using the Volume of Fraction model to analyze the similarities and differences between a water and blood droplet collision</p>
+                            </div>
+                        <div class="timeline-block">
+                            <div class="timeline-ico">
+                                <i class="fa fa-university"></i>
+                            </div>
+                                <div class="timeline-header">
+                                <h3>Process</h3>
+                                
+                            </div>
+                            <div class="timeline-content">
+                                        <p>My process was,
+                                        </p>
+                                    <ul>
+                                        <li>I first created the geometry of of a nozzle and a chamber and set the inside conditions to water and blood, respectively.<li>
+                                            <li>Then I meshed the geometry and solved to create a contour for the volume fraction of water to air at at increasing time steps of 6 micro seconds<li>
+                                            <li>And then I used the same geometry and mesh to solve for the volume fraction of blood to air at the same time steps.</li>
+                                            <li>However, this time I used the Cell-Viscosity user defined function to input the Carreau-Yasuda viscosity model for blood viscosity to create a new fluid.</li>
+                                        </li>
                                 <dl>
-                                    <li>Perfomed a VOF CFD Analysis in Ansys fluent using a user defined function to model collsion of blood with wall</li>
-                                    <li>Compare and contrasted water and blood droplet collsions by VOF Analysis captured at increasing time steps of 6 micro seconds, specifcally adressing the impact of viscosity differences.
-                                    </li>                                <dl>
-                                <h3>Highlight Reel:</h3>
+                            </div>
+                        <div class="timeline-block">
+                            <div class="timeline-ico">
+                                <i class="fa fa-university"></i>
+                            </div>
+                                <div class="timeline-header">
+                                <h3>Results</h3>
+                                
+                                </div>
+                            <div class="timeline-content">
+                                        <p>My Results were,
+                                        </p>
+                                    <ul>
+                                        <li>
+                                        </li>
+                                <dl>
+                            <div>
+                                <h3>Contours of Blood and Water Collision from 6µs to 30µs</h3>
                                 <div class="slideshow-container">
                                     <div class="mySlides1">
-                                        <div class="numbertext">1 / 10</div>
-                                        <img src="images/research/Blood Collision1.png" style="width:100%">
+                                        <div class="numbertext">1 / 5</div>
+                                        <img src="images/research/Blood Collision1.png" style="width:90%">
                                     </div>
                                     <div class="mySlides1">
-                                            <div class="numbertext">2 / 10</div>
-                                            <img src="images/research/Blood Collision2.png" style="width:100%">
+                                            <div class="numbertext">2 / 5</div>
+                                            <img src="images/research/Blood Collision2.png" style="width:90%">
                                     </div>
                                     <div class="mySlides1">
-                                            <div class="numbertext">3 / 10</div>
-                                            <img src="images/research/Blood Collision3.png" style="width:100%">
+                                            <div class="numbertext">3 / 5</div>
+                                            <img src="images/research/Blood Collision3.png" style="width:90%">
                                     </div>
                                     <div class="mySlides1">
-                                            <div class="numbertext">4 / 10</div>
-                                            <img src="images/research/Blood Collision4.png" style="width:100%">
+                                            <div class="numbertext">4 / 5</div>
+                                            <img src="images/research/Blood Collision4.png" style="width:90%">
                                     </div>
                                     <div class="mySlides1">
-                                            <div class="numbertext">5 / 10</div>
-                                            <img src="images/research/Blood Collision5.png" style="width:100%">
+                                            <div class="numbertext">5 / 5</div>
+                                            <img src="images/research/Blood Collision5.png" style="width:90%">
                                     </div>
-                                    <div class="mySlides1">
-                                            <div class="numbertext">6 / 10</div>
-                                            <img src="images/research/CFD Water1.png" style="width:100%">
-                                    </div>
-                                    <div class="mySlides1">
-                                            <div class="numbertext">7 / 10</div>
-                                            <img src="images/research/CFD Water2.png" style="width:100%">
-                                    </div>
-                                    <div class="mySlides1">
-                                            <div class="numbertext">8 / 10</div>
-                                            <img src="images/research/CFD Water3.png" style="width:100%">
-                                    </div>
-                                    <div class="mySlides1">
-                                            <div class="numbertext">9 / 10</div>
-                                            <img src="images/research/CFD Water4.png" style="width:100%">
-                                    </div>
-                                    <div class="mySlides1">
-                                            <div class="numbertext">10 / 10</div>
-                                            <img src="images/research/CFD Water5.png" style="width:100%">
-                                    </div>
-                                    <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
-                                    <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+                                    <a class="prev" onclick="plusSlides(-1, 0) + plusSlides(-1, 1)">&#10094;</a>
+                                    <a class="next" onclick="plusSlides(1, 0) + plusSlides(1, 1)">&#10095;</a>
                                 </div>
+                                <div class="slideshow-container">
+                                    <div class="mySlides2">
+                                            <div class="numbertext">1 / 5</div>
+                                            <img src="images/research/CFD Water1.png" style="width:90%">
+                                    </div>
+                                    <div class="mySlides2">
+                                            <div class="numbertext">2 / 5</div>
+                                            <img src="images/research/CFD Water2.png" style="width:90%">
+                                    </div>
+                                    <div class="mySlides2">
+                                            <div class="numbertext">3 / 5</div>
+                                            <img src="images/research/CFD Water3.png" style="width:90%">
+                                    </div>
+                                    <div class="mySlides2">
+                                            <div class="numbertext">4 / 5</div>
+                                            <img src="images/research/CFD Water4.png" style="width:90%">
+                                    </div>
+                                    <div class="mySlides2">
+                                            <div class="numbertext">5 / 5</div>
+                                            <img src="images/research/CFD Water5.png" style="width:90%">
+                                    </div>
+                                </div>
+                                <p>
+                                    <li>The difference between the collisions can be seen when the blood exits the nozzle and when the
+                                    first droplet hits and the second droplet follows.</li> 
+                                    <li>The difference between the blood and water at the nozzle is that blood is more elongated which makes sense because the viscosity of blood is greater than that of
+                                    water which means that it resists shear forces more.</li>
+                                    This difference can be seen in image 4 where the blood is flatter than the water. </p>
                             </div>
                         </div>
         <!-- /timeline-wrap -->
