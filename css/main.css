@@ -448,7 +448,11 @@ ol {
 
 ul {
     list-style: disc;
-    list-style-type: disc;
+    list-style-type: none;
+}
+
+.timeline-content ul {
+  list-style: disc;
 }
 
 li {
