@@ -1040,7 +1040,9 @@ input::-moz-focus-inner {
     font-family: "poppins-regular", sans-serif;
     font-size: 1.5rem;
 }
-
+  .text-black {
+     color: #000000;
+    }   
 .alert-box .close {
     position: absolute;
     right: 1.8rem;
@@ -1428,31 +1430,25 @@ header .top-bar {
 
 /* is clicked */
 
-.menu-toggle.is-clicked span {
+
+/* Animate hamburger when hovering anywhere on the top bar (same area that opens menu) */
+.top-bar:hover .menu-toggle span {
     background-color: rgba(255, 0, 119, 0);
 }
 
-.menu-toggle.is-clicked span::before,
-.menu-toggle.is-clicked span::after {
+.top-bar:hover .menu-toggle span::before,
+.top-bar:hover .menu-toggle span::after {
     background-color: #ff0077;
-    -moz-transition-delay: 0s, 0.2s;
-    -o-transition-delay: 0s, 0.2s;
-    -webkit-transition-delay: 0s, 0.2s;
-    -ms-transition-delay: 0s, 0.2s;
-    transition-delay: 0s, 0.2s;
+    transition-delay: 0s, 0.1s;
 }
 
-.menu-toggle.is-clicked span::before {
+.top-bar:hover .menu-toggle span::before {
     top: 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
     transform: rotate(45deg);
 }
 
-.menu-toggle.is-clicked span::after {
+.top-bar:hover .menu-toggle span::after {
     bottom: 0;
-    -webkit-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
     transform: rotate(-45deg);
 }
 
@@ -1479,7 +1475,13 @@ header .top-bar {
     width: 100%;
     height: auto;
     clear: both;
-    display: none;
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: max-height 0.35s ease, opacity 0.25s ease, transform 0.25s ease;
+    pointer-events: none;
 }
 
 .main-navigation>li {
@@ -1507,6 +1509,16 @@ header .top-bar {
     background: none;
     color: #FF0077;
 }
+/* OPEN when hovering OR when toggle has .is-clicked */
+.top-bar:hover .main-navigation,
+#main-nav-wrap:hover .main-navigation,
+.menu-toggle.is-clicked ~ #main-nav-wrap .main-navigation {
+    max-height: 1000px;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
 
 
 /**
@@ -2408,6 +2420,9 @@ header .top-bar {
     left: 0;
     width: 100%;
     height: 100%;
+}
+#research-experience ul.disc li::before {
+    background: #000000;
 }
 
 
