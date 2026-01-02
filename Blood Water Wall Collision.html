@@ -114,7 +114,7 @@
             <div class="row research-experience-header">
                 <div class="col-twelve">
                     <h1>Blood/Water collision with Wall</h1>
-                    <h2>(Computational Fluid Dynamics class Final)</h2>
+                    <h3>(Computational Fluid Dynamics class)</h3>
                 </div>
             </div>
 
@@ -139,7 +139,7 @@
                                 <h3>Objective</h3>
                             </div>
                             <div class="timeline-content">
-                                   <p>Our objective was to perform a CFD Fluent analysis using the Volume of Fraction model to analyze the similarities and differences between a water and blood droplet collision</p>
+                                   <p>My objective was to perform a CFD Fluent analysis using the Volume of Fraction model to analyze the similarities and differences between a water and blood droplet collision</p>
                             </div>
                         <div class="timeline-block">
                             <div class="timeline-ico">
@@ -150,15 +150,115 @@
                                 
                             </div>
                             <div class="timeline-content">
-                                        <p>My process was,
-                                        </p>
-                                    <ul>
-                                        <li>I first created the geometry of of a nozzle and a chamber and set the inside conditions to water and blood, respectively.<li>
-                                            <li>Then I meshed the geometry and solved to create a contour for the volume fraction of water to air at at increasing time steps of 6 micro seconds<li>
-                                            <li>And then I used the same geometry and mesh to solve for the volume fraction of blood to air at the same time steps.</li>
-                                            <li>However, this time I used the Cell-Viscosity user defined function to input the Carreau-Yasuda viscosity model for blood viscosity to create a new fluid.</li>
-                                        </li>
-                                <dl>
+                            <section class="project-process">
+
+                                   
+                                        
+                                     <p>
+                                        I set up a transient multiphase CFD model in ANSYS Fluent to simulate droplet formation,
+                                        travel, and wall impact using the Volume of Fluid (VOF) method.
+                                        The goal was to compare droplet behavior between a Newtonian fluid (water)
+                                        and a non-Newtonian fluid (blood).
+                                    </p>
+
+                                    
+                                        <strong>Baseline VOF Model</strong>
+                                    <p>
+                                        I created a 2D axisymmetric model of the nozzle and chamber to reduce computational cost
+                                        while preserving the core physics.
+                                        I used a pressure-based, transient solver with laminar flow
+                                        and enabled the VOF model to track the liquid–air interface.
+                                    </p>
+                                 
+                                        <strong>Boundary Conditions</strong>
+                                    <p>
+                                                <li>
+                                                <strong>Inlet (Velocity Inlet) — Phase: Mixture</strong>
+                                                <ul>
+                                                    <li><strong>Velocity magnitude:</strong> Time-dependent expression</li>
+                                                    <li>
+                                                    <strong>U(t):</strong>
+                                                    <code>IF(t&lt;=10e-06[sec],3.58[m/s]*cos(PI*t/30e-6[s]),0[m/s])</code>
+                                                    </li>
+                                                </ul>
+                                                </li>
+
+                                                <li>
+                                                <strong>Inlet (Velocity Inlet) — Phase: Water-Liquid (Secondary)</strong>
+                                                <ul>
+                                                    <li><strong>Volume fraction at inlet:</strong> <code>1.0</code></li>
+                                                </ul>
+                                                </li>
+
+                                                <li>
+                                                <strong>Outlet (Pressure Outlet) — Phase: Water-Liquid (Secondary)</strong>
+                                                <ul>
+                                                    <li><strong>Backflow volume fraction:</strong> <code>0.0</code> (default)</li>
+                                                </ul>
+                                                </li>
+
+                                                <li>
+                                                <strong>Top Wall (wall_no_wet) — Phase: Mixture</strong>
+                                                <ul>
+                                                    <li><strong>Contact angle:</strong> <code>175°</code> (non-wetting / strongly hydrophobic)</li>
+                                                </ul>
+                                                </li>
+
+                                                <li>
+                                                <strong>Side Wall (wall_wet) — Phase: Mixture</strong>
+                                                <ul>
+                                                    <li><strong>Contact angle:</strong> <code>90°</code> (default / neutral wetting)</li>
+                                                </ul>
+                                                </li>
+
+                                                <li>
+                                                <strong>Bottom Wall — Phase: Mixture</strong>
+                                                <ul>
+                                                    <li><strong>Wall shear condition:</strong> No-slip (zero velocity at the wall)</li>
+                                                </ul>
+                                                </li>
+                                            </ul>
+                        
+
+                                        I applied an inlet velocity to eject the fluid from the nozzle.
+                                         I enabled surface tension to capture capillary effects that influence droplet shape and breakup.
+                                        I modeled the opposite wall as a solid boundary using a no-slip wall condition
+                                        so droplets would impact and spread on the wall rather than pass through the domain. 
+                                        This allowed me to capture droplet formation, separation, and subsequent interaction
+                                        with the opposite wall.
+                                    </p>
+
+
+                                        <strong>Initialization and Solution</strong>
+                                    <p>
+                                        I initialized the domain with air and patched the nozzle region with liquid
+                                        by setting the volume fraction to one.
+                                        I used small time steps to resolve rapid interface motion during droplet ejection
+                                        and wall impact.
+                                    </p>
+
+                                  
+                                        <strong>User Defined Function Model Extension: Blood Flow</strong>
+                                    <p>
+                                        After validating the baseline water case, I extended the model to represent blood.
+                                        I wrote and compiled a User-Defined Function (UDF) that updates cell viscosity
+                                        based on local shear rate using the Carreau–Yasuda viscosity model.
+                                        I also updated the fluid density to match physiological blood properties.
+                                    </p>
+
+                                   
+                                        <strong>Re-Run and Comparison</strong>
+                                    <p>
+                                        I re-ran the transient VOF simulation using the non-Newtonian blood model
+                                        with the same boundary conditions and wall impact setup.
+                                        This allowed for a direct comparison between water and blood behavior
+                                        during droplet formation and collision with the wall.
+                                    </p>
+
+                                    </section>
+
+
+
                             </div>
                         <div class="timeline-block">
                             <div class="timeline-ico">
@@ -171,10 +271,6 @@
                             <div class="timeline-content">
                                         <p>My Results were,
                                         </p>
-                                    <ul>
-                                        <li>
-                                        </li>
-                                <dl>
                             <div>
                                 <h3>Contours of Blood and Water Collision from 6µs to 30µs</h3>
                                 <div class="slideshow-container">
@@ -223,13 +319,42 @@
                                             <img src="images/research/CFD Water5.png" style="width:90%">
                                     </div>
                                 </div>
+                                <section class="project-results">
+                                <h2>Results</h2>
+
+                                <h3>What the Contours Show</h3>
                                 <p>
-                                    <li>The difference between the collisions can be seen when the blood exits the nozzle and when the
-                                    first droplet hits and the second droplet follows.</li> 
-                                    <li>The difference between the blood and water at the nozzle is that blood is more elongated which makes sense because the viscosity of blood is greater than that of
-                                    water which means that it resists shear forces more.</li>
-                                    This difference can be seen in image 4 where the blood is flatter than the water. </p>
-                            </div>
+                                    The volume fraction contours show the full droplet timeline: liquid leaving the nozzle,
+                                    droplet formation, travel through the chamber, and impact/spreading on the opposite wall.
+                                    Comparing water vs. blood highlights how fluid properties change droplet shape and breakup.
+                                </p>
+
+                                <h3>Water vs. Blood Comparison</h3>
+                                <ul>
+                                    <li>
+                                    The largest differences appear during droplet formation at the nozzle exit and during wall impact,
+                                    especially when the first droplet hits the wall and the next droplet follows behind.
+                                    </li>
+                                    <li>
+                                    Compared to water, the blood case shows a more stretched/elongated shape as it exits the nozzle.
+                                    This is consistent with blood’s non-Newtonian viscosity (Carreau–Yasuda), which can increase the
+                                    effective viscosity in lower-shear regions and delay breakup.
+                                    </li>
+                                    <li>
+                                    After impact on the no-slip wall, the blood case tends to spread differently than water.
+                                    In the contour image, this shows up as a flatter or more extended liquid region at the wall
+                                    at the same time step.
+                                    </li>
+                                </ul>
+
+                                <h3>Takeaway</h3>
+                                <p>
+                                    This project demonstrates transient multiphase CFD skills in ANSYS Fluent, including VOF interface tracking,
+                                    surface tension effects, wall impact behavior using no-slip boundaries, and extending the model with a UDF
+                                    to simulate non-Newtonian blood flow.
+                                </p>
+
+                                </section>
                         </div>
         <!-- /timeline-wrap -->
     </body>

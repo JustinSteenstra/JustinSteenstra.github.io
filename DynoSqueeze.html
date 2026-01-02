@@ -111,9 +111,10 @@
     </head>
         <!---- Project Experience Section -->
         <section id="research-experience" class="grey-section">
-            <div class="row research-experience-header">
+             <div class="row research-experience-header">
                 <div class="col-twelve">
-                    <h1>Projects</h1>
+                    <h1>Hand powered Survival Device</h1>
+                    <h2>(ME Design Project)</h2>
                 </div>
             </div>
 
@@ -126,18 +127,139 @@
                                 <i class="fa fa-university"></i>
                             </div>
                             <div class="timeline-header">
-                                <h3>Museum Exhibit Game</h3>
-                                <p>October - December 2022</p>
+                                <h3>Key Design Requirements</h3>
                             </div>
                             <div class="timeline-content">
-                                <dl>
-                                    <li>Led a team of 4 to design and create an interactive museum exhibit game prototype for under $40 to be presented in an engineering expo to teach students and faculty about resilient engineering</li>
-                                    <li>Soldered wires to LEDs and Buttons and connected them to an Arduino board for users to be able to interact with the museum exhibit</li>
-                                    <li>Integrated game display images with corresponding buttons and LEDS within MATLAB for users to have a visually interactive experience to further engage in learning</li>
-                                    <li>Created a 3-month Gantt chart for the project in Excel to meet project deadlines and delegate project tasks which aided in the overall completion of our project </li>
-                                    <li>Documunted and created a wire diagram that allowed our team to fix any eletrical issue during the exhbit and prepare a second redundunt board in prepration for any issues in the primary board</li>
-                                </dl>
-                                <h3>Highlight Reel:</h3>
+                                    <ul>
+                                    <li><strong>Cost target:</strong> Less than $20 per unit for manufacturability and scalability</li>
+                                    <li><strong>Form factor:</strong> Compact handheld design (~160 × 50 × 135 mm, &lt;3 lb)</li>
+                                    <li><strong>Ergonomics:</strong> Designed to fit 6.3–8.1 in hand sizes with non-slip grip</li>
+                                    <li><strong>Power generation:</strong> 2–3.5 W output at ≤12 V using a brushless DC motor</li>
+                                    <li><strong>Energy storage:</strong> 1000 mAh onboard storage</li>
+                                    <li><strong>Mechanical transmission:</strong> 62:1 gearbox designed for ≥10,000 cycles</li>
+                                    <li><strong>Reliability:</strong> Stainless steel gearing to reduce wear and corrosion</li>
+                                    </ul>
+                            </div>
+                        <div class="timeline-block">
+                            <div class="timeline-ico">
+                                <i class="fa fa-university"></i>
+                            </div>
+                            <div class="timeline-header">
+                                <h3>Design Process</h3>
+                            </div>
+                            <div class="timeline-content">
+                                        <ol>
+                                            <li>
+                                            <strong>Role</strong>
+                                            <ul>
+                                                <li>
+                                                Owned the design + verification of the <strong>curved gear rack</strong>, the primary element that
+                                                transfers the handle squeeze force into the first drive gear and initiates motion in the gear system.
+                                                </li>
+                                                <li>
+                                                Performed hand calculations and SolidWorks FEA checks to validate strength, stability, fatigue life,
+                                                and gear-tooth performance; coordinated interface requirements with the curved rack screw and drive gear.
+                                                </li>
+                                            </ul>
+                                            </li>
+
+                                            <li>
+                                            <strong>Component</strong>
+                                            <ul>
+                                                <li>
+                                                <strong>Static:</strong> Curved Gear Rack — <strong>FS = 1.65</strong>
+                                                <ul>
+                                                    <li>Verified bending-driven yielding risk at the fixed connection region under peak squeeze loading.</li>
+                                                    <img src="images/Dynmo/Bending of curved rack.png" style="width:100%">
+                                                </ul>
+                                                </li>
+
+                                                <li>
+                                                <strong>Buckling:</strong> Curved Gear Rack — <strong>FS = 26.42</strong> (hand calc)
+                                                <img src="images/Dynmo/FBD of curved gear rack simple.png" style="width:100%">,
+                                                <strong>~4.74</strong> (SolidWorks buckling FEA)
+                                                <img src="images/Dynmo/Buckling of curved rack.png" style="width:100%">
+                                                <ul>
+                                                    <li>Compared simplified-theory assumptions vs. curved-geometry FEA to bound stability margin.</li>
+                                                </ul>
+                                                </li>
+
+                                                <li>
+                                                <strong>Fatigue:</strong> Curved Gear Rack — <strong>FS = 1.09</strong>
+                                                <img src="images/Dynmo/Fea fatigue of curved gear.png" style="width:100%">
+                                                <ul>
+                                                    <li>Fatigue was a key driver; material selection was updated from Al 3003 to Al 5052 to improve factor of safety margin under cyclic squeezing.</li>
+                                                </ul>
+                                                </li>
+                                            </ul>
+                                            </li>
+
+                                            <li>
+                                            <strong>Connection</strong>
+                                            <ul>
+                                                <div class="slideshow-container">
+                                                <div class="mySlides1">
+                                                    <div class="numbertext">1 / 2</div>
+                                                    <img src="images/Dynmo/Cuvered rack screw.png" style="width:100%">
+                                                </div>
+                                                <div class="mySlides1">
+                                                    <div class="numbertext">2 / 2</div>
+                                                    <img src="images/Dynmo/curved rack screw.png" style="width:50%">
+                                                </div>
+                                                <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+                                                <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+                                                <li>
+                                                <strong>Static:</strong> Curved Rack Screw — <strong>FS = 9.78</strong>
+                                                <ul>
+                                                    <li>Checked bolt loading under peak rack force to confirm large margin against static failure.</li>
+                                                </ul>
+                                                </li>
+
+                                                <li>
+                                                <strong>Fatigue:</strong> Curved Rack Screw — <strong>FS = 7.243</strong>
+                                                <ul>
+                                                    <li>Verified repeated squeeze cycling does not drive fatigue failure of the fastening joint.</li>
+                                                </ul>
+                                                </li>
+                                            </ul>
+                                            </li>
+
+                                            <li>
+                                            <strong>Power Transmission</strong>
+                                            <ul>
+                                                <li>
+                                                <strong>Teeth Bending:</strong> Curved Gear Rack — <strong>FS = 1.52</strong>
+                                                <ul>
+                                                    <li>Validated gear-tooth bending strength under transmitted load into the mating drive gear.</li>
+                                                </ul>
+                                                </li>
+
+                                                <li>
+                                                <strong>Teeth Wear:</strong> Curved Gear Rack — <strong>FS = 18.93</strong>
+                                                <ul>
+                                                    <li>Confirmed strong margin against contact-stress wear for long-term operation.</li>
+                                                </ul>
+                                                </li>
+                                            </ul>
+                                            </li>
+
+                                            <li>
+                                            <strong>Outcome</strong>
+                                            <ul>
+                                                <li>
+                                                Established the curved gear rack as a validated, production-ready design candidate with verified
+                                                safety factors across: static strength, buckling stability, fatigue, joint integrity, and gear-tooth loading.
+                                                </li>
+                                                <li>
+                                                Identified the lowest-margin modes (fatigue and tooth bending) early and used analysis + FEA to drive
+                                                design/material decisions while maintaining healthy margins in buckling, wear, and fastening.
+                                                </li>
+                                            </ul>
+                                            </li>
+                                        </ol>
+                                        </section>
+
+
                                 <div class="slideshow-container">
                                     <div class="mySlides3">
                                         <div class="numbertext">1 / 7</div>
