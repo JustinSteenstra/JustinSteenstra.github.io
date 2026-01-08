@@ -144,8 +144,7 @@
           </div>
           <div class="timeline-content">
             <p>
-              I designed a triplet-impinging LOX/Kerosene injector concept for the Seraphim Rocket Engine and built a staged
-              test plan to validate impingement behavior and calibrate real discharge coefficients (Cd) before committing to hot-fire hardware.
+              Design a triplet-impinging LOX/Kerosene injector for a liquid rocket engine
             </p>
           </div>
         </div>
@@ -178,7 +177,7 @@
         </div>
 
         <div class="timeline-header">
-            <h3>Design Process — CFD (My Contribution)</h3>
+            <h3>Design Process</h3>
         </div>
 
         <div class="timeline-content">
@@ -194,60 +193,63 @@
             <li><strong>Preliminary C<sub>d</sub>:</strong> Extracted early C<sub>d</sub> values from simulated ΔP vs. mass flow behavior to guide initial sizing</li>
             <li><strong>Design feedback:</strong> Used CFD results to inform geometry tweaks prior to cold-flow validation</li>
             </ul>
-            <h3>Hard Start Check</h3>
+            <div class="slideshow-container">
+                  <div class="mySlides1">
+                    <div class="numbertext">1 / 2</div>
+                    <img src="images/Triplet Photos/Triplet CFD 2.png" style="width:100%">
+                </div>
+                <div class="mySlides1">
+                    <div class="numbertext">2 / 2</div>
+                    <img src="images/Triplet Photos/Triplet CFD.png" style="width:100%">
+                </div>
+                <br>
+                <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>    
+            </div>                 
+          <h3><a href="files/Hard Start Calc.xlsx">Hard Start Check (Link to Excel Sheet Here)</a></h3>
+
             <p>
-              I ran a quick pooling estimate to understand ignition-delay risk and to guide safer sequencing during early testing.
+              I created a propellant pooling estimate parametric calculator using NASA's CEA website and my thermodynamics textbook to understand ignition-delay risk and to guide safer sequencing during early testing.
             </p>
             <ul>
               <li><strong>Assumed pooling time:</strong> 0.25 s</li>
               <li><strong>Pooled mass:</strong> 0.2235 kg total (LOX 0.1375 kg, Kero 0.0860 kg)</li>
               <li><strong>Mixture ratio:</strong> O/F = 1.6 (by weight)</li>
-              <li><strong>Estimated pressure:</strong> 60.94 bar (883.83 psi)</li>
             </ul>
-          </div>
-        </div>
+            <p>
+              Given the set parameters above I found the internal energy of the entire mixture and was able to plug that into the CEA software using the combustion at assigned density to get the chamber pressure if all the pooled propellant were to combust instantaneously.
+            </p>
+            <h2>Results</h2>
+            <p>
+              <strong>Estimated pressure:</strong> 94.48 bar (1370.27 psi)
+            </p>
+          <h3>Preliminary Test</h3>
+                <li>
+                  <strong>Water flow proof-of-concept (triplet behavior + manifolds)</strong>
+                  <p>
+                    We used dyed-water testing on an SLA-printed injector to verify visible triplet impingement and to confirm that the flow could develop in the tangential finger-like kerosene manifolds.
+                  </p>
+                  <ul class="disc">
+                    <li><strong>Test modes:</strong> Hydrostatic (~13 psi from ~30 ft head) and pump-fed (~35 psi)</li>
+                    <li><strong>Readout:</strong> High-speed video (240 FPS, slowed) to confirm a stable “water cone” and impingement behavior</li>
+                  </ul>
+                  <p>
+                    <video src="images/research/Pump fed Water test.mp4" style="width:70%" controls></video>
+                  </p>
+                </li>
 
-
-        <!-- TESTING (FOCUS) -->
-        <div class="timeline-block">
-          <div class="timeline-ico">
-            <i class="fa fa-university"></i>
+                <li>
+                  <strong>Machining Injector</strong>
+                  <p>
+                    I and one other person jointly made a fixture design to hold the injector during machining.
+                  </p>
+                  <p>
+                    <em>Note:</em> Because the test article is a different material than the final metal hardware, I planned to correct/interpret pressure data accordingly.
+                  </p>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div class="timeline-header">
-            <h3>Testing</h3>
-          </div>
-          <div class="timeline-content">
-            <ul>
-              <li>
-                <strong>Water flow proof-of-concept (triplet behavior + manifolds)</strong>
-                <p>
-                  I used dyed-water testing on an SLA-printed injector to verify visible triplet impingement and to confirm the kerosene manifold concept
-                  (including tangential entries) before moving forward with final hardware.
-                </p>
-                <ul class="disc">
-                  <li><strong>Test modes:</strong> Hydrostatic (~13 psi from ~30 ft head) and pump-fed (~35 psi)</li>
-                  <li><strong>Readout:</strong> High-speed video (240 FPS, slowed) to confirm a stable “water cone” and impingement behavior</li>
-                </ul>
-                <p>
-                  <video src="images/research/Pump fed Water test.mp4" style="width:70%" controls></video>
-                </p>
-              </li>
-
-              <li>
-                <strong>Pump-fed Cd characterization (planned next step)</strong>
-                <p>
-                  I defined the Cd test process to replace assumed discharge coefficients with measured values:
-                  run pressurized water through a resin-printed version of the final design, record mass flow + inlet pressure for each propellant path,
-                  back-calculate Cd, then adjust orifice sizing if needed.
-                </p>
-                <p>
-                  <em>Note:</em> Because the test article is a different material than the final metal hardware, I planned to correct/interpret pressure data accordingly.
-                </p>
-              </li>
-            </ul>
-          </div>
-        </div>
-
         <!-- RESULTS -->
         <div class="timeline-block">
           <div class="timeline-ico">
