@@ -104,12 +104,12 @@
         </header>
         <!-- /header -->
     </head>
-        <!---- Project Experience Section -->
+       <!---- Project Experience Section -->
 <section id="research-experience" class="grey-section">
   <div class="row research-experience-header">
     <div class="col-twelve">
       <h1>WAAM Powder Feeder</h1>
-      <h2>(Wire-Arc Additive Manufacturing — Modular Powder Feeder Integration)</h2>
+      <h2>(Wire-Arc Additive Manufacturing — Modular Powder Feeder attachment)</h2>
     </div>
   </div>
 
@@ -120,15 +120,19 @@
         <!-- Skills -->
         <div class="timeline-block">
           <div class="timeline-ico">
-            <i class="fa fa-university"></i>
+            <i class="fa fa-cogs"></i>
           </div>
           <div class="timeline-header">
             <h3>Skills</h3>
           </div>
           <div class="timeline-content">
-            <p>
-              CAD, Mechanical Integration, Reverse Engineering (digital calipers), Resin 3D Printing,
-              Assembly & Fit-Up, Design for Serviceability, Rapid Iteration
+            <p class="skill-chips">
+              <span class="chip">SolidWorks CAD,</span>
+              <span class="chip">SolidWorks Simulation (FEA),</span>
+              <span class="chip">Mechanical Integration,</span>
+              <span class="chip">Resin 3D Printing,</span>
+              <span class="chip">Assembly & Test</span>
+              <span class="chip">Rapid Iteration</span>
             </p>
           </div>
         </div>
@@ -136,175 +140,223 @@
         <!-- Objective -->
         <div class="timeline-block">
           <div class="timeline-ico">
-            <i class="fa fa-university"></i>
+            <i class="fa fa-bullseye"></i>
           </div>
           <div class="timeline-header">
             <h3>Objective</h3>
           </div>
           <div class="timeline-content">
             <p>
-              To design a powder feeder that will integrate with the robotic arm of a wire-arc additive manufacturing machine, enabling the creation of large, metal matrix composite parts in a continuous process. 
+              Design a powder feeder attachment that mounts to a WAAM robotic arm and MIG torch system to enable continuous fabrication of
+              large metal-matrix-composite (MMC) parts—without disrupting the existing print process.
             </p>
+
+            <figure class="portfolio-figure">
+              <img
+                src="images/WAAM BAAM Photos/WAAMCell.png"
+                alt="WAAM cell and robot setup used for powder feeder integration"
+                loading="lazy"
+              />
+              <figcaption>WAAM cell context used to define integration constraints and mounting clearances.</figcaption>
+            </figure>
           </div>
         </div>
 
-        <!-- My Role -->
+        <!-- Key System Requirements -->
         <div class="timeline-block">
           <div class="timeline-ico">
-            <i class="fa fa-university"></i>
+            <i class="fa fa-list"></i>
           </div>
           <div class="timeline-header">
-            <h3>My Role</h3>
+            <h3>Key System Requirements</h3>
           </div>
+
           <div class="timeline-content">
-            <ul>
-              <li>
-                I was the <strong>sole designer</strong> of the <strong>mounting hardware</strong> used to attach the powder feeder to the WAAM torch/robot.
-              </li>
-              <li>
-                I created a <strong>full-scale 3D CAD model of the WAAM torch head</strong> by measuring the physical torch with <strong>digital calipers</strong>
-                to ensure correct dimensions and mounting placement.
-              </li>
-              <li>
-                I <strong>resin 3D printed</strong> the mounting components and <strong>assembled the full system</strong> onto the robot for testing.
-              </li>
-            </ul>
+            <div class="req-grid">
+              <div class="req-card">
+                <h4>Overall System</h4>
+                <ul class="portfolio-bullets">
+                  <li><strong>Deposition rate:</strong> 10 g/min powder deposition</li>
+                  <li><strong>Mass:</strong> &lt; 20 lb total assembly</li>
+                  <li><strong>Heat environment:</strong> withstand ~1500 °C melt-pool proximity (radiant exposure)</li>
+                  <li><strong>Integration:</strong> no impact to WAAM torch operation or robot motion envelope</li>
+                  <li><strong>Manufacturability:</strong> fabricated quickly enough for quick testing and rapid iteration</li>
+                </ul>
+              </div>
+
+              <div class="req-card">
+                <h4>Mounting</h4>
+                <ul class="portfolio-bullets">
+                  <li><strong>Load support:</strong> powder feeder + existing camera system</li>
+                  <li><strong>Serviceability:</strong> install/remove by a single person during iterative testing</li>
+                  <li><strong>Clearance:</strong> no interference with robot travel or torch operation</li>
+                  <li><strong>Vibration robustness:</strong> resist loosening / preserve feeder position during motion</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
 
         <!-- Design Process -->
         <div class="timeline-block">
           <div class="timeline-ico">
-            <i class="fa fa-university"></i>
+            <i class="fa fa-wrench"></i>
           </div>
           <div class="timeline-header">
             <h3>Design Process</h3>
           </div>
+
           <div class="timeline-content">
             <p>
-              I treated the mounting task as a real integration problem: the mount needed to be stiff, repeatable, and safe
-              across the robot’s motion, while also being easy to install and service during lab testing.
+              I approached the mount as a practical integration task: it had to hold alignment through robot motion, not interfere with the torch and existing cables, and be able to be installed and removed quickly during iterative testing.
             </p>
 
-            <ul>
+            <ol class="portfolio-steps">
               <li>
-                <strong>Defined constraints and success criteria.</strong>
-                I started by identifying what could break the integration: torch geometry uncertainty, limited clearance near the torch,
-                vibration from motion, and the risk of interference during robot travel. My design goal was a mount that held position
-                reliably and could be removed or adjusted quickly.
+                <strong>Defined constraints & failure modes.</strong>
+                Clearance uncertainty near the torch, robot motion/vibration, and the risk of
+                interference during travel were the main integration risks. Success meant consistent positioning and quick and easy serviceability.
               </li>
 
               <li>
                 <strong>Reverse engineered the torch head for accurate CAD interfaces.</strong>
-                Because mounting success depends on real geometry, I measured the WAAM torch head with digital calipers and built a full-scale
-                CAD model. This gave me a trusted reference for clamp surfaces, fastener placement, cable clearance, and final mount location.
+                Due to limited documentation I figured the best first course of action was to measure the WAAM torch head with digital calipers and built a full-scale SolidWorks model to lock down clamp surfaces,
+                fastener locations, and cable/torch clearance.
+                <figure class="portfolio-figure">
+                  <img
+                    src="images/WAAM BAAM Photos/WAAM Torch.png"
+                    alt="WAAM torch model and reference geometry for mounting design"
+                    loading="lazy"
+                  />
+                  <figcaption>My Full-scale torch reference model used to design clamp geometry and ensure clearance.</figcaption>
+                </figure>
               </li>
 
               <li>
-                <strong>Designed the mount for stiffness and alignment.</strong>
-                I designed clamp-style mounting geometry so the feeder could be positioned consistently relative to the torch.
-                I focused on preventing rotation/slip and making sure the assembly stayed aligned after tightening.
+                <strong>Designed a rigid, repeatable clamp-style mount.</strong>
+                I designed the mount to position the feeder consistently relative to the torch while preserving the pre-existing camera mount.
+                Hardware selections included stainless M5 fasteners with split lock washers to reduce loosening, and M8 nuts
+                to secure to existing M8 torch-head fasteners.
+                <figure class="portfolio-figure">
+                  <img
+                    src="images/WAAM BAAM Photos/Mounting Setup.png"
+                    alt="Powder feeder mounting setup CAD showing clamp and interface points"
+                    loading="lazy"
+                  />
+                  <figcaption>Mounting concept showing primary interfaces and retained camera mount location.</figcaption>
+                </figure>
               </li>
 
               <li>
-                <strong>Designed for serviceability and iteration.</strong>
-                I made sure the mount could be installed and removed without redesigning other hardware.
-                This mattered because testing required multiple assembly cycles, tuning, and quick fixes.
+                <strong>Verified stiffness and safety margin with full-assembly FEA.</strong>
+                Before printing, I ran SolidWorks Simulation on a simplified assembly of the powder feeder to evaluate deformation/stiffness and ensure no obvious
+                high-risk stress concentrations in the mount or interfaces under expected loading.
+                <div class="slideshow-container" data-slideshow="waam-fea">
+                  <div class="mySlide is-active">
+                    
+                    <img
+                      src="images/WAAM BAAM Photos/WAAM FEA DISPLACEMENT.png"
+                      alt="FEA displacement result for WAAM powder feeder mount"
+                      loading="lazy"
+                    />
+                    <div class="captiontext">Full Assembly FEA displacement (Max Displacement: 2.97e-02 mm).</div>
+                  </div>
+
+                  <div class="mySlide">
+                   
+                    <img
+                      src="images/WAAM BAAM Photos/WAAM FEA FOS.png"
+                      alt="FEA factor of safety result for WAAM powder feeder mount"
+                      loading="lazy"
+                    />
+                    <div class="captiontext">Full Assembly FEA factor-of-safety (Min Factor of safety = 12).</div>
+                  </div>
+                </div>
               </li>
 
               <li>
-                <strong>Fabricated and integrated.</strong>
-                I resin 3D printed the final mounting parts, checked fit on the physical torch, and then assembled the powder feeder
-                onto the robot. I validated that everything stayed secure and that the setup was practical for real lab use.
+                <strong>Fabricated, assembled, and validated fit on hardware.</strong>
+                I resin 3D printed the final mounting parts with a Formlabs 3L resin printer, checked fit on the physical torch, and assembled the powder feeder onto the robot.
+                I validated clamp security and confirmed the setup was practical for repeated use.
+                <figure class="portfolio-figure">
+                  <img
+                    src="images/WAAM BAAM Photos/WAAM_Full_mount.jpg"
+                    alt="Final assembled powder feeder mount installed on WAAM torch"
+                    loading="lazy"
+                  />
+                  <figcaption>Final assembled mount installed on the WAAM torch/robot system.</figcaption>
+                </figure>
               </li>
-            </ul>
+
+              <li>
+                <strong>Testing & iteration support.</strong>
+                I designed the mount for quick removal and reinstallation so we could iterate during tuning without modifying other WAAM hardware. Before final testing, I ran a shake-down motion test—driving the robot through aggressive movement profiles—to confirm there was no interference and that the powder feeder remained secure with no loosening.
+              </li>
+            </ol>
           </div>
         </div>
 
         <!-- Results -->
         <div class="timeline-block">
           <div class="timeline-ico">
-            <i class="fa fa-university"></i>
+            <i class="fa fa-check-circle"></i>
           </div>
           <div class="timeline-header">
             <h3>Results</h3>
           </div>
+
           <div class="timeline-content">
-            <ul>
-              <li>
-                The powder feeder was successfully mounted to the WAAM system using my custom resin-printed mount and assembly hardware.
-              </li>
-              <li>
-                The integration supported robot motion testing and practical use without obvious interference issues.
-              </li>
-              <li>
-                The final setup enabled continued testing and iteration by making the feeder assembly removable and adjustable.
-              </li>
+            <ul class="portfolio-bullets">
+              <li>Successfully mounted the powder feeder to the WAAM system using a custom resin-printed mount and selected assembly hardware.</li>
+              <li>Maintained practical usability: removable/adjustable feeder assembly and preserved the existing camera mounting function.</li>
+              <li>Supported robot motion testing without obvious clearance/interference issues.</li>
             </ul>
 
-            <div>
-              <h3>Highlight Reel</h3>
-
-              <!-- Replace image paths with your actual slideshow images -->
-              <div class="slideshow-container">
-                <div class="mySlides2">
-                  <img src="images/waam/torch_cad.png" style="width:90%" alt="Reverse engineered WAAM torch head CAD">
-                  <p style="margin-top:8px;">
-                    Full-scale CAD model of the WAAM torch head created from caliper measurements to drive accurate mount geometry and placement.
-                  </p>
-                </div>
-
-                <div class="mySlides2">
-                  <img src="images/waam/mount_cad.png" style="width:90%" alt="Mount CAD design">
-                  <p style="margin-top:8px;">
-                    Mount design focused on stiffness, repeatable alignment, and clearances around the torch.
-                  </p>
-                </div>
-
-                <div class="mySlides2">
-                  <img src="images/waam/mount_printed.jpg" style="width:90%" alt="Resin 3D printed mounting parts">
-                  <p style="margin-top:8px;">
-                    Resin 3D printed mounting components used for rapid iteration and real fit-up on the torch.
-                  </p>
-                </div>
-
-                <div class="mySlides2">
-                  <img src="images/waam/system_installed.jpg" style="width:90%" alt="Powder feeder installed on WAAM robot">
-                  <p style="margin-top:8px;">
-                    Final assembly installed on the WAAM robot for integration testing and validation.
-                  </p>
-                </div>
-
-                <a class="prev" onclick="plusSlides(-1, 2)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1, 2)">&#10095;</a>
-              </div>
+            <div class="video-wrap">
+              <video
+                src="images/WAAM BAAM Photos/WAAM Powder Feeder Final Test.mp4"
+                controls
+                preload="metadata"
+                style="width:100%;"
+              ></video>
+              <p class="video-caption">Final integration test video (mount installed and system exercised).</p>
             </div>
           </div>
         </div>
-
-        <!-- Final Summary -->
         <div class="timeline-block">
           <div class="timeline-ico">
-            <i class="fa fa-university"></i>
+            <i class="fa fa-fire"></i>
           </div>
           <div class="timeline-header">
-            <h3>Final Summary</h3>
+            <h3>Supplemental Thermal Analysis</h3>
           </div>
+
           <div class="timeline-content">
             <p>
-              This project delivered a working WAAM powder feeder integration concept, with mounting hardware that is secure,
-              repeatable, and practical to use during testing. My contribution was the full mechanical integration: I created the
-              torch head CAD model from caliper measurements, designed and resin-printed the mount, and assembled the full system
-              onto the robot so it could be tested and iterated in the lab.
+              As a separate risk check from the mounting work, I performed a hand-calculation to determine whether the powder
+              delivery nozzle required thermal protection near the WAAM melt pool.
             </p>
-          </div>
-        </div>
 
-      </div>
+            <ul class="portfolio-bullets">
+              <li>
+                <strong>Method:</strong> 3-surface, radiation-only enclosure heat transfer model.
+              </li>
+              <li>
+                <strong>Key result:</strong> Predicted nozzle-tip temperature of <strong>1410.6&nbsp;°C</strong> at a standoff distance of
+                <strong>21.6&nbsp;cm</strong> from the melt pool.
+              </li>
+              <li>
+                <strong>Engineering decision:</strong> Selected a <strong>ceramic nozzle</strong> to protect the powder feeder outflow from
+                excessive heat exposure.
+              </li>
+          </ul>
+        </div>
       <!-- /timeline-wrap -->
     </div>
   </div>
+</div>
 </section>
+
 
 
         <!-- /timeline-wrap -->
